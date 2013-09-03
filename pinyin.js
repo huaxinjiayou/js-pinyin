@@ -5,7 +5,7 @@
     }
 
     function fTranslate(sChars, sSplitter) {
-        if(!sSplitter) {
+        if(sSplitter === undefined) {
             sSplitter = ' ';
         }
 
@@ -15,7 +15,7 @@
         var i, l, sUChar, sPinyin;
         for(i = 0, l = aChars.length; i < l; i++) {
             if(aChars[i] === ' ') {
-                return;
+                continue;
             }
             sUChar = window.escape(aChars[i]).replace('%u', '');
             sPinyin = oMandarin[sUChar];
